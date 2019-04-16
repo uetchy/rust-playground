@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      const imports = {
+        env: {
+          jsSum: function(a, b) {
+            return a + b
+          },
+        },
+      }
+
+      fetch('./target/wasm32-unknown-unknown/debug/rust_wasm.wasm')
+        .then((response) => response.arrayBuffer())
+        .then((bytes) => WebAssembly.instantiate(bytes, imports))
+        .then((wasmModule) => {
+          const instance = wasmModule.instance
+          console.log(instance.exports.sum(2, 3))
+          console.log(instance.exports.sum_with_js(2, 3))
+        })
+    </script>
+  </head>
+
+  <body></body>
+</html>

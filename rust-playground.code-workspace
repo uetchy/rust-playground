@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "path": "guessing_game"
+    },
+    {
+      "path": "hello_world"
+    },
+    {
+      "path": "tensorflow"
+    },
+    {
+      "path": "wasm"
+    },
+    {
+      "path": "ffi"
+    }
+  ],
+  "settings": {}
+}
